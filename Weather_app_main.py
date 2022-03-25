@@ -80,6 +80,8 @@ def informacao():
     humidity = dados['main']['humidity']
     wind_speed = dados['wind']['speed']
     description = dados['weather'][0]['description']
+    temperature = dados['main']['temp']
+    temperature = round(temperature - 273.15)
 
     if pais_codigo == 'GB':     #essa linha de código se faz necessária pois o pycountry_converter não consegue ler Britain(UK)
         pais = 'Great Britain'
@@ -101,6 +103,8 @@ def informacao():
     pressao['text'] = 'Pressão : ' + str(pressure)
     vel_vento['text'] = 'Velocidade do vento : ' +  str(wind_speed)
     descricao['text'] = description
+    temperatura['text'] = str(temperature) + ' °C'
+
 
     #logica da troca do fundo para cada horário
     zona_periodo = datetime.now(zona)
@@ -161,6 +165,7 @@ def informacao():
     pressao['bg'] = fundo
     vel_vento['bg'] = fundo
     descricao['bg'] = fundo
+    temperatura['bg'] = fundo
 
 
 
@@ -188,14 +193,16 @@ humidade_nome = Label(frame_corpo, text='',anchor='center',bg=fundo,fg=cor2, fon
 humidade_nome.place(x=90, y=130)
 
 pressao = Label(frame_corpo, text='',anchor='center',bg=fundo,fg=cor2, font=('Arial 10'))
-pressao.place(x=10, y=180)
+pressao.place(x=10, y=220)
 
 vel_vento = Label(frame_corpo, text='',anchor='center',bg=fundo,fg=cor2, font=('Arial 10'))
-vel_vento.place(x=10, y=212)
+vel_vento.place(x=10, y=240)
 
 descricao = Label(frame_corpo, text='',anchor='center',bg=fundo,fg=cor2, font=('Arial 10'))
 descricao.place(x=210, y=230)
 
+temperatura = Label(frame_corpo, text='',anchor='center',bg=fundo,fg=cor2, font=('Arial 25'))
+temperatura.place(x=10, y=160)
 
 
 
