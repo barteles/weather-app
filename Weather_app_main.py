@@ -12,6 +12,7 @@ from datetime import datetime,timezone
 import json
 import pytz
 import pycountry_convert as pc
+import config
 
 
 global imagem
@@ -46,9 +47,9 @@ estilo.theme_use('clam')
 
 def informacao():
 
-    chave = '387edf4a7d0c0133440ab024137eaaed'
+    
     escolhe_cidade = local.get()
-    api_link = f'https://api.openweathermap.org/data/2.5/weather?q={escolhe_cidade}&appid={chave}'
+    api_link = f'https://api.openweathermap.org/data/2.5/weather?q={escolhe_cidade}&appid={config.chave}'
 
     #fazendo chamada da API usando request
     r = requests.get(api_link)
