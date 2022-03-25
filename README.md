@@ -3,7 +3,7 @@
 
 Esse projeto utiliza um API para buscar o nome da cidade, país e continente e traz a hora, temperatura, humidade, como se encontra o tempo (nublado, limpo). O usuário forcenece o nome da cidade que ele quer e a API fará a requisição das informações.
 
-![Tempo](weather_app.png "Aplicativo do tempo")
+![Tempo](Weather_app.png)
 
 ---
 ## Módulos
