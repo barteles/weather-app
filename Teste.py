@@ -17,7 +17,7 @@ import config
 
 
 escolhe_cidade = 'London'
-api_link = f'https://api.openweathermap.org/data/2.5/weather?q={escolhe_cidade}&appid={config.chave}'
+api_link = f'https://api.openweathermap.org/data/2.5/weather?q={escolhe_cidade}&appid={config.api_key}'
 
 #fazendo chamada da API usando request
 r = requests.get(api_link)

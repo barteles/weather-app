@@ -49,7 +49,7 @@ def informacao():
 
     
     escolhe_cidade = local.get()
-    api_link = f'https://api.openweathermap.org/data/2.5/weather?q={escolhe_cidade}&appid={config.chave}'
+    api_link = f'https://api.openweathermap.org/data/2.5/weather?q={escolhe_cidade}&appid={config.api_key}'
 
     #fazendo chamada da API usando request
     r = requests.get(api_link)
@@ -104,7 +104,8 @@ def informacao():
     pressao['text'] = 'Pressão : ' + str(pressure)
     vel_vento['text'] = 'Velocidade do vento : ' +  str(wind_speed)
     descricao['text'] = description
-    temperatura['text'] = str(temperature) + ' °C'
+    temperatura['text'] = str(temperature)
+    temperatura_simb['text'] = '°C'
 
 
     #logica da troca do fundo para cada horário
@@ -167,6 +168,7 @@ def informacao():
     vel_vento['bg'] = fundo
     descricao['bg'] = fundo
     temperatura['bg'] = fundo
+    temperatura_simb['bg'] = fundo
 
 
 
@@ -202,8 +204,10 @@ vel_vento.place(x=10, y=240)
 descricao = Label(frame_corpo, text='',anchor='center',bg=fundo,fg=cor2, font=('Arial 10'))
 descricao.place(x=210, y=230)
 
-temperatura = Label(frame_corpo, text='',anchor='center',bg=fundo,fg=cor2, font=('Arial 25'))
+temperatura = Label(frame_corpo, text='',anchor='center',bg=fundo,fg=cor2, font=('Arial 30'))
 temperatura.place(x=10, y=160)
+temperatura_simb = Label(frame_corpo, text='',anchor='center',bg=fundo,fg=cor2, font=('Arial 10'))
+temperatura_simb.place(x=60, y=165)
 
 
 
